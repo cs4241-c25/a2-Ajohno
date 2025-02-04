@@ -1,19 +1,145 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <title>CS4241 Assignment 2</title>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <script src="js/main.js"></script>
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Itim&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- get rid of favicon error -->
-    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
-</head>
-<body>
-<form>
-    <label for="yourname">Your Name: </label><input type="text" id="yourname" value="your name here">
-    <button>submit</button>
-</form>
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+  </head>
+  <body>
+    <!-- Main Title -->
+    <h1>Donezo</h1>
 
-</body>
+    <!-- Remaining Task Section -->
+    <section
+      class="widget-background"
+      style="
+        width: 362px;
+        height: 124px;
+        justify-self: center;
+        margin-top: -3%;
+        display: flex;
+      "
+    >
+      <!-- Red area with the words -->
+      <article
+        class="rounded-box"
+        style="background-color: #e26d67; padding-right: 6%; padding-left: 6%"
+      >
+        <h2>
+          Tasks <br />
+          Left:
+        </h2>
+      </article>
+
+      <!-- Area with the number of tasks left -->
+      <article>
+        <h2
+          class="item-counter"
+          style="
+            color: #e26d67;
+            font-size: 96px;
+            margin-top: -3%;
+            margin-left: 100%;
+          "
+        >
+          <!-- 9 -->
+        </h2>
+      </article>
+    </section>
+
+    <!-- Area with the task list on the left and the new task form on the right -->
+    <div
+      style="display: flex; margin-top: 2%; justify-content: center; gap: 2%"
+    >
+      <!-- Task List -->
+      <section
+        class="widget-background scrollable"
+        style="width: 592px; height: 500px; display: flex; flex-direction: row"
+      >
+        <section style="display: flex; width: 100%">
+          <!-- Red section to check off items -->
+          <article
+            class="rounded-box"
+            style="
+              background-color: #e38884;
+              width: 10%;
+              min-height: 500px;
+              flex-grow: 1;
+              align-content: top;
+              display: flex;
+              flex-direction: column;
+              padding-top: 2%;
+            "
+          >
+            <!-- <button onclick="toggleTask(0)">✖</button>
+            <button></button>
+            <button></button> -->
+          </article>
+
+          <!-- Task list -->
+          <div class="task-list">
+            <!-- <div class="task-item done">This is a done task</div>
+            <div class="task-item done">This is a done task</div>
+            <div class="task-item done">This is a done task</div>
+            <div class="task-item">This task is not done</div>
+            <div class="task-item">This task is not done</div>
+            <div class="task-item">This task is not done</div>
+            <div class="task-item">This task is not done</div>
+            <div class="task-item">This task is not done</div>
+            <div class="task-item">This task is not done</div> -->
+          </div>
+          <!-- Template for the task list -->
+          <template id="task-template">
+            <!-- Buttons for update and delete -->
+            <!-- <button>x</button> -->
+            <div class="task-item">This task is not done</div>
+          </template>
+        </section>
+      </section>
+
+      <!-- New Task Form -->
+      <section class="widget-background" style="width: 592px">
+        <!-- New Form Header -->
+        <article
+          class="rounded-box"
+          style="background-color: #e38884; width: 100%"
+        >
+          <h2 style="justify-self: center; padding-top: 1%; padding-bottom: 1%">
+            Make a New Task
+          </h2>
+        </article>
+
+        <!-- New Task Form -->
+        <form>
+          <!-- Task Description -->
+          <label for="taskDescription">Task Description:</label>
+          <input type="text" id="taskDescription" placeholder="Enter Task" />
+
+          <br />
+          <br />
+          <!-- Due Date -->
+          <label for="dueDate">Due Date:</label>
+          <input type="date" id="dueDate" />
+
+          <br />
+
+          <!-- Form Buttons -->
+          <article style="display: flex; margin-top: 30%">
+            <button id="clearBtn">Clear</button>
+            <button id="submitBtn">Submit</button>
+          </article>
+        </form>
+      </section>
+    </div>
+  </body>
 </html>
